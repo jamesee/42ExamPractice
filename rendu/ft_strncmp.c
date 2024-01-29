@@ -6,12 +6,15 @@
 /*   By: jee <jee@student.42singapore.sg>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:48:22 by jee               #+#    #+#             */
-/*   Updated: 2024/01/29 14:57:05 by jee              ###   ########.fr       */
+/*   Updated: 2024/01/29 15:02:51 by jee              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+// need to take care of situation 
+// where n > strlen(s1)
+// or n > strlen(s2)
 int	ft_strncmp(char *s1, char *s2, size_t n)
 {
 	while (*s1 == *s2 && (*s1 || *s2) && n--)
