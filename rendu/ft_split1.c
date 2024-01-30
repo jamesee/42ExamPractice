@@ -6,7 +6,7 @@
 /*   By: james <jee@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 17:34:42 by james             #+#    #+#             */
-/*   Updated: 2024/01/29 18:50:21 by james            ###   ########.fr       */
+/*   Updated: 2024/01/29 18:56:47 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static bool	ft_is_sep(char c)
 {
-	return (c == 0x20 || c == 0x09 || c == 0x0a);
+	return (c == 0x20 || c == 0x09 || c == 0x0a || c == '\0');
 }
 
 // sep_flag = true when previous char is sep
