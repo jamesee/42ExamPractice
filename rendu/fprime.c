@@ -6,7 +6,7 @@
 /*   By: james <jee@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:10:57 by james             #+#    #+#             */
-/*   Updated: 2024/01/30 16:32:09 by james            ###   ########.fr       */
+/*   Updated: 2024/01/30 19:02:14 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ bool	ft_is_prime(int n)
 	int i;
 
 	i = 1;
-	while (++i < n)
+	while (++i < n/2)
 		if (n % i == 0)
 			return (false);
 	return (true);
