@@ -6,7 +6,7 @@
 /*   By: james <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 02:55:46 by james             #+#    #+#             */
-/*   Updated: 2024/03/01 06:32:45 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 06:37:35 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,40 @@
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE	10
 #endif
+
+size_t	ft_strlen(char *str)
+{
+	char	*ptr;
+
+	ptr = str;
+	while (*str)
+		str++;
+	return (str - ptr);
+}
+
+
+void	ft_memcpy(char *dest, char *src, size_t n)
+{
+	if (dest == src || !n)
+		return ;
+
+	while (n--)
+		*dest++ = *src++;
+}
+
+char	*ft_strchr(const char *src, int c)
+{
+	while (*src)
+	{
+		if (*src == (char) c)
+			return ((char *)src);
+		src++;
+	}
+	if ((char) c == *src)
+		return ((char *)src);
+	return (NULL);
+}
+
 char	*ft_storebuffer(char *store, char *buffer)
 {
 	char	*new;

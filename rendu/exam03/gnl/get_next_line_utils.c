@@ -6,32 +6,15 @@
 /*   By: james <jee@42mail.sutd.edu.sg>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 12:10:18 by james             #+#    #+#             */
-/*   Updated: 2024/03/01 06:22:38 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 06:37:20 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *str)
-{
-	char	*ptr;
-
-	ptr = str;
-	while (*str)
-		str++;
-	return (str - ptr);
-}
 
 
 
-void	ft_memcpy(char *dest, char *src, size_t n)
-{
-	if (dest == src || !n)
-		return ;
-
-	while (n--)
-		*dest++ = *src++;
-}
 /*
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -48,15 +31,4 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 }
 */
 
-char	*ft_strchr(const char *src, int c)
-{
-	while (*src)
-	{
-		if (*src == (char) c)
-			return ((char *)src);
-		src++;
-	}
-	if ((char) c == *src)
-		return ((char *)src);
-	return (NULL);
-}
+
