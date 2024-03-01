@@ -6,7 +6,7 @@
 /*   By: james <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 04:48:05 by james             #+#    #+#             */
-/*   Updated: 2024/03/01 06:08:02 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 06:14:16 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ size_t	ft_switch_case(char c, va_list *ap)
 	if (c == 'p')
 		return (ft_case_p((void *) va_arg(*ap, void *)));
 	if (c == 'x')
-		return (ft_case_x((unsigned int) va_arg(*ap, unsigned int));
+		return (ft_case_lx((unsigned int) va_arg(*ap, unsigned int));
 	else
 		return (-1);
 
