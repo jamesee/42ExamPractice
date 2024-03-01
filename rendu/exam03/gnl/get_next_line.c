@@ -6,7 +6,7 @@
 /*   By: james <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 02:55:46 by james             #+#    #+#             */
-/*   Updated: 2024/03/01 06:46:39 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 07:01:29 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,16 +54,14 @@ char	*ft_storebuffer(char *store, char *buffer)
 	char	*new;
 	size_t	len;
 
+	if (store == NULL)
+		return (NULL);
+	if (*buffer == '\0')
+		return (store);
 	len = ft_strlen(store) + ft_strlen(buffer);
 	new = (char *)malloc(sizeof(char) * (len + 1));
 	if (!new)
-	{
-		if (buffer)
-			free(buffer);
-		if (store)
-			free(store);
-		return (NULL);
-	}
+		return (free(store), NULL);
 	ft_memcpy(new, store, ft_strlen(store));
 	ft_memcpy(new + ft_strlen(store), buffer, ft_strlen(buffer));
 	new[len] = '\0';
@@ -79,10 +77,7 @@ char	*ft_updatestore(char *store)
 		return (NULL);
 	start = ft_strchr(store, '\n');
 	if (!start)
-	{
-		free (store);
-		return (NULL);
-	}
+		return (free(store), NULL);
 	ft_memcpy(store, start + 1, ft_strlen(start + 1));
 	store[ft_strlen(start + 1)] = '\0';
 	return (store);
