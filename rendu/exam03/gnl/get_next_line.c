@@ -6,7 +6,7 @@
 /*   By: james <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 02:55:46 by james             #+#    #+#             */
-/*   Updated: 2024/03/01 06:29:32 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 06:32:45 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,13 @@ char	*get_next_line(int fd)
 	if (store == NULL)
 		return (NULL);
 	line = ft_extractline(store);
+	if (line == NULL)
+	{
+		if (store)
+			free(store);
+		store = NULL;
+		return (NULL);
+	}
 	store = ft_updatestore(store);
 	return (line);
 }
