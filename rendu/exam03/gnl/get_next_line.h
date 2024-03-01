@@ -6,7 +6,7 @@
 /*   By: james <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 03:44:57 by james             #+#    #+#             */
-/*   Updated: 2024/03/01 04:11:51 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 06:23:00 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_updatestore(char *store);
 char	*get_next_line(int fd);
 size_t	ft_strlen(char *s);
 char	*ft_strchr(const char *s, int c);
-char	*ft_memcpy(char *dest, char *src, size_t n);
+void	ft_memcpy(char *dest, char *src, size_t n);
 char	*ft_storebuffer(char *s1, char *s2);
 
 /*

@@ -6,7 +6,7 @@
 /*   By: james <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 02:55:46 by james             #+#    #+#             */
-/*   Updated: 2024/03/01 04:46:02 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 06:29:32 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,29 @@
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE	10
 #endif
+char	*ft_storebuffer(char *store, char *buffer)
+{
+	char	*new;
+	size_t	len;
 
+	len = ft_strlen(store) + ft_strlen(buffer);
+	new = (char *)malloc(sizeof(char) * (len + 1));
+	if (!new)
+	{
+		if (buffer)
+			free(buffer);
+		if (store)
+			free(store);
+		return (NULL);
+	}
+	ft_memcpy(new, store, ft_strlen(store));
+	ft_memcpy(new + ft_strlen(store), buffer, ft_strlen(buffer));
+	new[len] = '\0';
+	free(store);
+	return (new);
+}
+
+/*
 char	*ft_storebuffer(char *store, char *buffer)
 {
 	char	*new;
@@ -43,6 +65,7 @@ char	*ft_storebuffer(char *store, char *buffer)
 	new[i] = '\0';
 	return (new);
 }
+*/
 
 char	*ft_updatestore(char *store)
 {

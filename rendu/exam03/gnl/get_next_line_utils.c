@@ -6,7 +6,7 @@
 /*   By: james <jee@42mail.sutd.edu.sg>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 12:10:18 by james             #+#    #+#             */
-/*   Updated: 2024/03/01 04:12:06 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 06:22:38 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ size_t	ft_strlen(char *str)
 
 
 
-char	*ft_memcpy(char *dest, char *src, size_t n)
+void	ft_memcpy(char *dest, char *src, size_t n)
 {
 	if (dest == src || !n)
-		return (dest);
+		return ;
 
 	while (n--)
 		*dest++ = *src++;
-	return (dest);
 }
 /*
 void	*ft_memcpy(void *dest, const void *src, size_t n)
