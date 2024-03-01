@@ -6,7 +6,7 @@
 /*   By: james <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 02:55:46 by james             #+#    #+#             */
-/*   Updated: 2024/03/01 04:19:16 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 04:22:42 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,6 @@
 # define BUFFER_SIZE	10
 #endif
 
-char	*ft_storebuffer(char *store, char *buffer)
-{
-	char	*new_store;
-	char	*p;
-	size_t	len;
-	int		i;
-
-	len = ft_strlen(store) + ft_strlen(buffer);
-	new_store = malloc(sizeof(char) + (len + 1));
-	i = 0;
-	p = store;
-	while (*p)
-		*(new_store + i++) = *p++;
-	free(store);
-	store = NULL;
-	while (*buffer)
-		*(new_store + i++) = *buffer++;
-	new_store[i] = '\0';
-	return (new_store);
-}
-/*
 char	*ft_storebuffer(char *store, char *buffer)
 {
 	char	*new;
@@ -65,8 +44,6 @@ char	*ft_storebuffer(char *store, char *buffer)
 	return (new);
 }
 
-*/
-
 char	*ft_updatestore(char *store)
 {
 	char	*start;
@@ -81,28 +58,6 @@ char	*ft_updatestore(char *store)
 	return (store);
 }
 
-/*
-char	*ft_extractline(char *store)
-{
-	char	*line;
-	size_t	len;
-	int		i;
-
-	if (store[0] == '\0')
-		return (NULL);
-	i = 0;
-	while (store[i] != '\0' && store[i] != '\n')
-		++i;
-	len = i + (store[i] == '\n');
-	line = malloc(sizeof(char) * (len + 1));
-	if (line == NULL)
-		return (NULL);
-	ft_memcpy(line, store, len);
-	line[len] = '\0';
-	return (line);
-}
-
-*/
 char	*ft_extractline(char *store)
 {
 	char	*line;
