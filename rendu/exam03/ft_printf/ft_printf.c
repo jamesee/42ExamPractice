@@ -6,13 +6,17 @@
 /*   By: james <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 04:48:05 by james             #+#    #+#             */
-/*   Updated: 2024/03/01 06:02:14 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 06:08:02 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <unistd.h>
+#include <limits.h>
+#include <stdlib.h>
+#include <stdarg.h>
 
 #define PTRNULL	"(nil)"
+#define STRNULL	"(null)"
 #define BUFFERSIZE 20
 
 size_t	ft_strlen(char *s)
@@ -36,7 +40,7 @@ size_t ft_case_c(int c)
 size_t	ft_case_s(char *str)
 {
 	if (!str)
-		return (write(1, "(null)", 6));
+		return (write(1, STRNULL, ft_strlen(STRNULL)));
 	return (write(1, str, ft_strlen(str)));
 }
 
