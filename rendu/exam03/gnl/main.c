@@ -6,7 +6,7 @@
 /*   By: james <jee@student.42singapore.sg>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 10:32:18 by james             #+#    #+#             */
-/*   Updated: 2023/09/24 10:32:59 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 04:34:30 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main()
 	int		i;
 	char	*gnl;
 
-	int fd = open("test.txt", O_RDONLY | O_CREAT);
+	int fd = open("test.txt", O_RDONLY );
 	printf("fd = %d\n", fd);
 
     if (fd == -1) 
