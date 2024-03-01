@@ -6,7 +6,7 @@
 /*   By: james <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 02:55:46 by james             #+#    #+#             */
-/*   Updated: 2024/03/01 04:05:17 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 04:17:14 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ char	*ft_updatestore(char *store)
 	ft_memcpy(store, start + 1, ft_strlen(start));
 	return (store);
 }
+
+/*
 char	*ft_extractline(char *store)
 {
 	char	*line;
@@ -75,21 +77,19 @@ char	*ft_extractline(char *store)
 	line[len] = '\0';
 	return (line);
 }
-/*
+
+*/
 char	*ft_extractline(char *store)
 {
 	char	*line;
 	size_t	len;
-	int		i;
 
 	if (!store || *store == '\0')
 		return (NULL);
 	len = 0;
-	i = 0;
-	while (store[i] && store[i] != '\n')
-		++i;
-	len = i;
-	if (store[i] == '\n')
+	while (store[len] && store[len] != '\n')
+		len++;
+	if (store[len] == '\n')
 		len++;
 	line = (char *)malloc(sizeof(char) * (len + 1));
 	if (line == NULL)
@@ -98,7 +98,6 @@ char	*ft_extractline(char *store)
 	line[len] = '\0';
 	return (line);
 }
-*/
 
 char	*ft_fdreader(int fd, char *store)
 {
