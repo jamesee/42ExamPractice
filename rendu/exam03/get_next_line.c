@@ -6,7 +6,7 @@
 /*   By: james <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 02:55:46 by james             #+#    #+#             */
-/*   Updated: 2024/03/01 04:22:42 by james            ###   ########.fr       */
+/*   Updated: 2024/03/01 04:27:09 by james            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ char	*ft_updatestore(char *store)
 {
 	char	*start;
 
+	if (store == NULL)
+		return (NULL);
 	start = ft_strchr(store, '\n');
 	if (!start)
 	{
